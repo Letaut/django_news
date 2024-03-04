@@ -1,0 +1,58 @@
+{% load static %}
+{% load bootstrap4 %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}homepage {% endblock%}</title>
+    <!-- Bootstrap 4 CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/css/bootstrap.min.css' %}" />
+
+    <!-- Main Jquery -->
+    <script type="text/javascript" src="{% static 'vendor/js/jquery.min.js' %} "></script>
+    <!-- Bootstrap Js -->
+    <script type="text/javascript" src="{% static 'vendor/css/bootstrap.min.js' %}"></script>
+</head>
+<body>
+    <!-- Top Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info">
+        <div class="container">
+            <a class="navbar-brand" href="/">КЫРГЫЗПАТЕНТ</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'all-news' %}">All News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'all-category' %}">All Categories</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Full-width Image -->
+    <div class="container-fluid p-0">
+        <img class="header-image img-fluid" alt="" src="http://patent.gov.kg/wp-content/uploads/2023/07/шапка-на-сайт.jpg">
+    </div>
+
+    {% block content %}
+    {% endblock%}
+
+    <hr/>
+    <footer class="text-muted">
+        <div class="container">
+            <p class="float-right">
+                <a href="#">Back to top</a>
+            </p>
+            <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
+            <p>New to Bootstrap? <a href="https://getbootstrap.com/">Visit the homepage</a> or read our <a href="/docs/4.5/getting-started/introduction/">getting started guide</a>.</p>
+        </div>
+    </footer>
+</body>
+</html>
